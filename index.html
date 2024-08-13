@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="display" class="display"> 
+        <h1 id="resultado" class="resultado">01</h1>
+      </div>
+      <div>
+        <p class="texto">Por favor seleccione su número: </p>
+        <button type="button" id="anterior">Anterior</button>
+        <button type="button" id="siguiente">Siguiente</button>
+        <button type="reset" id="reset">Reset</button>
+      </div>
+      <div>
+        <p class="texto">Introduzca un número: </p>
+        <input type="number" name="" id="userNumber" min="00" max="99" placeholder="00 - 99" value="00">
+        <button type="button" id="aceptar">Aceptar</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
