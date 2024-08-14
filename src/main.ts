@@ -1,35 +1,60 @@
 
 
-function cambiarResultadoAnterior() {
+// function cambiarResultadoAnterior() {
+//     const resultado = document.getElementById("resultado");
+
+//     if (resultado !== undefined && resultado !== null) {
+//         const text = resultado.innerText;
+//         let numero = Number(text);
+//         numero -= 1;
+//         resultado.innerText = numero.toString().padStart(2, '0');
+//     };
+// };
+
+// function cambiarResultadoSiguiente() {
+//     const resultado = document.getElementById("resultado");
+
+//     if (resultado !== undefined && resultado !== null) {
+//         const text = resultado.innerText;
+//         let numero = Number(text);
+//         numero += 1;
+//         resultado.innerText = numero.toString().padStart(2, '0');
+//     };
+// };
+
+// function cambiarResultadoReset() {
+//     const resultado = document.getElementById("resultado");
+
+//     if (resultado !== undefined && resultado !== null) {
+//         const text = resultado.innerText;
+//         let numero = Number(text);
+//         numero = 0;
+//         resultado.innerText = numero.toString().padStart(2, '0');
+//     }
+// };
+
+function mostrarResultado (idEvent : string) {
     const resultado = document.getElementById("resultado");
-
-    if (resultado !== undefined && resultado !== null) {
-        const text = resultado.innerText;
-        let numero = Number(text);
-        numero -= 1;
-        resultado.innerText = numero.toString().padStart(2, '0');
-    };
-};
-
-function cambiarResultadoSiguiente() {
-    const resultado = document.getElementById("resultado");
-
-    if (resultado !== undefined && resultado !== null) {
-        const text = resultado.innerText;
-        let numero = Number(text);
-        numero += 1;
-        resultado.innerText = numero.toString().padStart(2, '0');
-    };
-};
-
-function cambiarResultadoReset() {
-    const resultado = document.getElementById("resultado");
-
-    if (resultado !== undefined && resultado !== null) {
-        const text = resultado.innerText;
-        let numero = Number(text);
-        numero = 0;
-        resultado.innerText = numero.toString().padStart(2, '0');
+    
+    
+    if (resultado !== undefined && resultado !== null && resultado instanceof HTMLHeadingElement)  {
+        if (idEvent == "anterior") {
+            const text = resultado.innerText
+            let numero = Number(text)
+            numero -= 1
+            resultado.innerText = numero.toString().padStart(2, '0')
+            
+        }else if (idEvent == "siguiente") {
+            const text = resultado.innerText
+            let numero = Number(text)
+            numero += 1
+            resultado.innerText = numero.toString().padStart(2, '0')
+        }else if (idEvent == "reset") {
+            const text = resultado.innerText
+            let numero = Number(text)
+            numero = 0
+            resultado.innerText = numero.toString().padStart(2, '0')
+        }
     }
 };
 
@@ -56,19 +81,19 @@ const usuario = document.getElementById("userNumber");
 
 if (botonAnterior !== undefined && botonAnterior !== null) {
     botonAnterior!.addEventListener("click", () => {
-        cambiarResultadoAnterior();
+        mostrarResultado("anterior");
     });
 };
 
 if (botonSiguiente !== undefined && botonSiguiente !== null) {
     botonSiguiente!.addEventListener("click", () => {
-        cambiarResultadoSiguiente();
+        mostrarResultado("siguiente");
     })
 ;}
 
 if (botonReset !== undefined && botonReset !== null) {
     botonReset!.addEventListener("click", () => {
-        cambiarResultadoReset();
+        mostrarResultado("reset");
     })
 }
 
