@@ -1,3 +1,6 @@
+body{
+  background: linear-gradient(blue, green) ;
+}
 .display {
   display: flex;
   flex-direction: column;
@@ -8,6 +11,7 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
 }
 
 .resultado {
@@ -22,6 +26,15 @@
   font-weight: bold;
   margin: 0;
   text-align: center;
+}
+
+div button {
+  margin: 10px 20px 10px 10px;
+}
+
+div button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: #f9f9f9;
 }
 
 :root {
