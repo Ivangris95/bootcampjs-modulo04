@@ -34,11 +34,7 @@
 const mostrarResultado = (idEvent: string) => {
   const resultado = document.getElementById("resultado");
 
-  if (
-    resultado !== undefined &&
-    resultado !== null &&
-    resultado instanceof HTMLHeadingElement
-  ) {
+  if (resultado && resultado instanceof HTMLHeadingElement) {
     if (idEvent == "anterior") {
       const text = resultado.innerHTML;
       let numero = parseInt(text);
@@ -62,12 +58,7 @@ const cambiarResultado = (idUsuario: string) => {
   const resultado = document.getElementById("resultado");
   const usuario = document.getElementById(idUsuario) as HTMLInputElement;
 
-  if (
-    resultado !== undefined &&
-    resultado !== null &&
-    usuario !== undefined &&
-    usuario !== null
-  ) {
+  if (resultado && resultado instanceof HTMLHeadingElement) {
     let numero = parseInt(usuario.value);
     resultado.innerHTML = numero.toString().padStart(2, "0");
   }
@@ -79,25 +70,25 @@ const botonReset = document.getElementById("reset");
 const aceptar = document.getElementById("aceptar");
 const usuario = document.getElementById("userNumber");
 
-if (botonAnterior !== undefined && botonAnterior !== null) {
+if (botonAnterior && botonAnterior instanceof HTMLButtonElement) {
   botonAnterior!.addEventListener("click", () => {
     mostrarResultado("anterior");
   });
 }
 
-if (botonSiguiente !== undefined && botonSiguiente !== null) {
+if (botonSiguiente && botonSiguiente instanceof HTMLButtonElement) {
   botonSiguiente!.addEventListener("click", () => {
     mostrarResultado("siguiente");
   });
 }
 
-if (botonReset !== undefined && botonReset !== null) {
+if (botonReset && botonReset instanceof HTMLButtonElement) {
   botonReset!.addEventListener("click", () => {
     mostrarResultado("reset");
   });
 }
 
-if (aceptar !== undefined && aceptar !== null) {
+if (aceptar && aceptar instanceof HTMLButtonElement) {
   aceptar.addEventListener("click", () => {
     cambiarResultado("userNumber");
   });
